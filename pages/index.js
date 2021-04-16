@@ -1,65 +1,31 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { useEffect } from "react"
+import Navbar from "../Components/Navbar"
+import Layouts from "../Components/Layouts"
+import Typed from 'react-typed';
 
-export default function Home() {
+export default function index() {
+    useEffect(() => {
+      console.log('Hei Next')
+    }, [
+      
+    ])
+  
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div >
+      <Layouts title="Home"/>
+      <Navbar />
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+      <main className="flex justify-center text-white text-2xl mt-5">
+        <Typed strings={['Hai 👋 what are you looking for ']} typeSpeed={20}/>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <main className="flex justify-center text-white text-2xl mt-5">
+        <Typed strings={['Dont Forget Visit my Github ya 😑 ']} typeSpeed={100} loop/>
+      </main>
+      <div className="mt-40 flex justify-center">
+          <div className="bg-white py-3 px-5 rounded-xl cursor-pointer hover:bg-yellow-300 hover:text-gray-50" ><a href="mailto:diooktar@gmail.com">Send me email</a></div>
+      </div>
+      <span className="flex justify-center text-white mt-10">This web still beta test [Updated : Sabtu 17 April 00:02]</span>
+      <span className="flex justify-center text-white mt-10">Web ini dibuat menggunakan : Next JS + Tailwind</span>
     </div>
   )
 }
